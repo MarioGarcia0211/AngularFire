@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angularfire0211": {
+      "hosting": {
+        "AngularFirebase": [
+          "angularfire0211"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angularfire0211"
+  }
+}

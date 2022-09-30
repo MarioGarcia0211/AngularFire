@@ -1,0 +1,146 @@
+/** Angular Variables **/
+:root {
+  /** primary **/
+  --ng-color-primary: #3880ff;
+  --ng-color-primary-rgb: 56, 128, 255;
+  --ng-color-primary-contrast: #ffffff;
+  --ng-color-primary-contrast-rgb: 255, 255, 255;
+  --ng-color-primary-shade: #3171e0;
+  --ng-color-primary-tint: #4c8dff;
+
+  /** secondary **/
+  --ng-color-secondary: #3dc2ff;
+  --ng-color-secondary-rgb: 61, 194, 255;
+  --ng-color-secondary-contrast: #ffffff;
+  --ng-color-secondary-contrast-rgb: 255, 255, 255;
+  --ng-color-secondary-shade: #36abe0;
+  --ng-color-secondary-tint: #50c8ff;
+
+  /** tertiary **/
+  --ng-color-tertiary: #5260ff;
+  --ng-color-tertiary-rgb: 82, 96, 255;
+  --ng-color-tertiary-contrast: #ffffff;
+  --ng-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ng-color-tertiary-shade: #4854e0;
+  --ng-color-tertiary-tint: #6370ff;
+
+  /** success **/
+  --ng-color-success: #2dd36f;
+  --ng-color-success-rgb: 45, 211, 111;
+  --ng-color-success-contrast: #ffffff;
+  --ng-color-success-contrast-rgb: 255, 255, 255;
+  --ng-color-success-shade: #28ba62;
+  --ng-color-success-tint: #42d77d;
+
+  /** warning **/
+  --ng-color-warning: #ffc409;
+  --ng-color-warning-rgb: 255, 196, 9;
+  --ng-color-warning-contrast: #000000;
+  --ng-color-warning-contrast-rgb: 0, 0, 0;
+  --ng-color-warning-shade: #e0ac08;
+  --ng-color-warning-tint: #ffca22;
+
+  /** danger **/
+  --ng-color-danger: #eb445a;
+  --ng-color-danger-rgb: 235, 68, 90;
+  --ng-color-danger-contrast: #ffffff;
+  --ng-color-danger-contrast-rgb: 255, 255, 255;
+  --ng-color-danger-shade: #cf3c4f;
+  --ng-color-danger-tint: #ed576b;
+
+  /** dark **/
+  --ng-color-dark: #222428;
+  --ng-color-dark-rgb: 34, 36, 40;
+  --ng-color-dark-contrast: #ffffff;
+  --ng-color-dark-contrast-rgb: 255, 255, 255;
+  --ng-color-dark-shade: #1e2023;
+  --ng-color-dark-tint: #383a3e;
+
+  /** medium **/
+  --ng-color-medium: #92949c;
+  --ng-color-medium-rgb: 146, 148, 156;
+  --ng-color-medium-contrast: #ffffff;
+  --ng-color-medium-contrast-rgb: 255, 255, 255;
+  --ng-color-medium-shade: #808289;
+  --ng-color-medium-tint: #9d9fa6;
+
+  /** light **/
+  --ng-color-light: #f4f5f8;
+  --ng-color-light-rgb: 244, 245, 248;
+  --ng-color-light-contrast: #000000;
+  --ng-color-light-contrast-rgb: 0, 0, 0;
+  --ng-color-light-shade: #d7d8da;
+  --ng-color-light-tint: #f5f6f9;
+}
+
+@media (prefers-color-scheme: dark) {
+  /*
+   * Dark Colors
+   * -------------------------------------------
+   */
+
+  body {
+    --ng-color-primary: #428cff;
+    --ng-color-primary-rgb: 66,140,255;
+    --ng-color-primary-contrast: #ffffff;
+    --ng-color-primary-contrast-rgb: 255,255,255;
+    --ng-color-primary-shade: #3a7be0;
+    --ng-color-primary-tint: #5598ff;
+
+    --ng-color-secondary: #50c8ff;
+    --ng-color-secondary-rgb: 80,200,255;
+    --ng-color-secondary-contrast: #ffffff;
+    --ng-color-secondary-contrast-rgb: 255,255,255;
+    --ng-color-secondary-shade: #46b0e0;
+    --ng-color-secondary-tint: #62ceff;
+
+    --ng-color-tertiary: #6a64ff;
+    --ng-color-tertiary-rgb: 106,100,255;
+    --ng-color-tertiary-contrast: #ffffff;
+    --ng-color-tertiary-contrast-rgb: 255,255,255;
+    --ng-color-tertiary-shade: #5d58e0;
+    --ng-color-tertiary-tint: #7974ff;
+
+    --ng-color-success: #2fdf75;
+    --ng-color-success-rgb: 47,223,117;
+    --ng-color-success-contrast: #000000;
+    --ng-color-success-contrast-rgb: 0,0,0;
+    --ng-color-success-shade: #29c467;
+    --ng-color-success-tint: #44e283;
+
+    --ng-color-warning: #ffd534;
+    --ng-color-warning-rgb: 255,213,52;
+    --ng-color-warning-contrast: #000000;
+    --ng-color-warning-contrast-rgb: 0,0,0;
+    --ng-color-warning-shade: #e0bb2e;
+    --ng-color-warning-tint: #ffd948;
+
+    --ng-color-danger: #ff4961;
+    --ng-color-danger-rgb: 255,73,97;
+    --ng-color-danger-contrast: #ffffff;
+    --ng-color-danger-contrast-rgb: 255,255,255;
+    --ng-color-danger-shade: #e04055;
+    --ng-color-danger-tint: #ff5b71;
+
+    --ng-color-dark: #f4f5f8;
+    --ng-color-dark-rgb: 244,245,248;
+    --ng-color-dark-contrast: #000000;
+    --ng-color-dark-contrast-rgb: 0,0,0;
+    --ng-color-dark-shade: #d7d8da;
+    --ng-color-dark-tint: #f5f6f9;
+
+    --ng-color-medium: #989aa2;
+    --ng-color-medium-rgb: 152,154,162;
+    --ng-color-medium-contrast: #000000;
+    --ng-color-medium-contrast-rgb: 0,0,0;
+    --ng-color-medium-shade: #86888f;
+    --ng-color-medium-tint: #a2a4ab;
+
+    --ng-color-light: #222428;
+    --ng-color-light-rgb: 34,36,40;
+    --ng-color-light-contrast: #ffffff;
+    --ng-color-light-contrast-rgb: 255,255,255;
+    --ng-color-light-shade: #1e2023;
+    --ng-color-light-tint: #383a3e;
+  }
+}

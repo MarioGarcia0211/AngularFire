@@ -1,0 +1,62 @@
+<nav class="navbar sticky-top navbar-expand-lg w-full shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand mb-0 h1 titulo-logo" routerLink="/home">Angular Firebase</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn btn-closed" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item centrar">
+            <a class="nav-link" aria-current="page" routerLink="/home/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" data-bs-dismiss="offcanvas"><i class="bi bi-house"></i> Inicio</a>
+          </li>
+
+          <li class="nav-item centrar">
+            <a class="nav-link" aria-current="page" routerLink="/home/perfil" routerLinkActive="active" data-bs-dismiss="offcanvas"><i class="bi bi-person-circle" ></i> Mi perfil</a>
+          </li>
+
+          <li class="nav-item centrar" *ngIf="rols === 'Admin'">
+            <a class="nav-link" aria-current="page" routerLink="/home/usuarios" routerLinkActive="active" data-bs-dismiss="offcanvas"><i class="bi bi-people-fill" ></i> Usuarios</a>
+          </li>
+
+
+          <li class="nav-item salir">
+            <a class="nav-link" aria-current="page" data-bs-dismiss="offcanvas"><button class="btn btn-logout" (click)="cerrarSesion()"><i class="bi bi-box-arrow-in-right"></i> Cerrar sesión</button></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- <nav class="navbar sticky-top navbar-expand-lg navbar-dark w-full shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand mb-0 h1" routerLink="/home">Angular Firebase</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item centrar">
+          <a class="nav-link" aria-current="page" routerLink="/home/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="bi bi-house"></i> Inicio</a>
+        </li>
+
+        <li class="nav-item centrar">
+          <a class="nav-link" aria-current="page" routerLink="/home/perfil" routerLinkActive="active"><i class="bi bi-person-circle"></i> Mi perfil</a>
+        </li>
+
+        <li class="nav-item centrar">
+          <a class="nav-link" aria-current="page" routerLink="/home/usuarios" routerLinkActive="active"><i class="bi bi-people-fill"></i> Usuarios</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/login"><button class="btn btn-danger"><i class="bi bi-box-arrow-in-right"></i> Cerrar sesión</button></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->

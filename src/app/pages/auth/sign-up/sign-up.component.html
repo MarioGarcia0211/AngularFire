@@ -1,0 +1,112 @@
+<div class="contenedor">
+  <div class="register">
+    <h1 class="text-center">Registrate</h1>
+    <form class="row g-3" [formGroup]="formRegister" (ngSubmit)="register()">
+      <!-- Name -->
+      <div class="form-group col-md-6">
+        <label class="form-label">Nombre</label>
+        <div class="input-group ">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+        <input class="form-control" formControlName="name" type="text" [ngClass]="(formRegister.controls['name'].errors && formRegister.controls['name'].touched) ? 'is-invalid' : ''">
+        </div>
+        <!-- Error Validation name -->
+        <div class="validation" *ngIf="formRegister.controls['name'].errors && formRegister.controls['name'].touched">
+          <span>El nombre es <strong>requerido</strong>.</span>
+        </div>
+      </div>
+      <!-- Finish name -->
+
+      <!-- Lastname -->
+      <div class="form-group col-md-6">
+        <label class="form-label">Apellido</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+        <input class="form-control" formControlName="lastname"  type="text" [ngClass]="(formRegister.controls['lastname'].errors && formRegister.controls['lastname'].touched) ? 'is-invalid' : ''">
+        </div>
+        <!-- Error Validation lastname -->
+        <div class="validation" *ngIf="formRegister.controls['lastname'].errors && formRegister.controls['lastname'].touched">
+          <span>El apellido es <strong>requerido</strong>.</span>
+        </div>
+      </div>
+      <!-- Finish lastname -->
+
+      <!-- Date of birth -->
+      <div class="form-group col-md-6">
+        <label class="form-label">Fecha de nacimiento</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-123"></i></span>
+          <input class="form-control" formControlName="dateOfBirth"  type="date" [ngClass]="(formRegister.controls['dateOfBirth'].errors && formRegister.controls['dateOfBirth'].touched) ? 'is-invalid' : ''">
+        </div>
+        <!-- Error Validation n° dateOfBirth -->
+        <div class="validation" *ngIf="formRegister.controls['dateOfBirth'].errors && formRegister.controls['dateOfBirth'].touched">
+          <span>La fecha de nacimiento es <strong>requerida</strong>.</span>
+        </div>
+      </div>
+      <!-- Finish N° dateOfBirth -->
+
+      <!-- Gender -->
+      <div class="form-group col-md-6">
+        <label class="form-label">Genéro</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-question"></i></span>
+          <select class="form-select" formControlName="gender" [ngClass]="(formRegister.controls['gender'].errors && formRegister.controls['gender'].touched) ? 'is-invalid' : ''">
+            <option selected disabled>Elige un genéro</option>
+            <option *ngFor="let item of gender$" value="{{item.name}}">{{item.name}}</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <!-- Error Validation gender -->
+        <div class="validation" *ngIf="formRegister.controls['gender'].errors && formRegister.controls['gender'].touched">
+          <span>El generó es <strong>requerido</strong>.</span>
+        </div>
+      </div>
+      <!-- Finish gender -->
+
+       <!-- Other gender -->
+      <div class="" *ngIf= "formRegister.value['gender'] == 'Otro'">
+        <label class="form-label">Escribe el genéro</label>
+        <input formControlName="otroGenero" [ngClass]="" class="form-control">
+      </div>
+      <!-- Finish other gender -->
+
+      <!-- Email -->
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+          <input class="form-control" formControlName="email" type="email" [ngClass]="(formRegister.controls['email'].errors && formRegister.controls['email'].touched) ? 'is-invalid' : ''">
+        </div>
+        <!-- Error validation email -->
+        <div class="validation" *ngIf="formRegister.controls['email'].hasError('email') && !formRegister.controls['email'].hasError('required') || formRegister.controls['email'].hasError('pattern')">
+          Por favor, introduce una dirección de correo electrónico válida.
+        </div>
+
+        <div class="validation" *ngIf="formRegister.controls['email'].hasError('required') && formRegister.controls['email'].touched">
+          <span>El email es <strong>requerido</strong>.</span>
+        </div>
+      </div>
+      <!-- Finish email -->
+
+      <!-- Password -->
+      <div class="form-group">
+        <label class="form-label">Contraseña</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-lock"></i></span>
+          <input class="form-control" formControlName="password" type="password" [ngClass]="(formRegister.controls['password'].errors && formRegister.controls['password'].touched) ? 'is-invalid' : ''">
+        </div>
+        <!-- Error validation password -->
+        <div class="validation" *ngIf="formRegister.controls['password'].errors && formRegister.controls['password'].touched">
+          <span>Se <strong>requiere</strong> una contraseña de al menos 6 caracteres.</span>
+        </div>
+      </div>
+      <!-- Finish password -->
+
+      <div class="boton d-grid gap-2">
+        <button type="submit" class="btn" [disabled]="!formRegister.valid">Registrarse</button>
+      </div>
+    </form>
+
+    <div class="footer-text text-center">¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></div>
+  </div>
+</div>

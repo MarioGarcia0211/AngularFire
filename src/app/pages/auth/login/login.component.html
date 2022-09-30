@@ -1,0 +1,43 @@
+
+<div class="contenedor">
+  <div class="login">
+    <h1 class="text-center">Iniciar Sesión</h1>
+    <form [formGroup]="formLogin" (ngSubmit)="ingresar()">
+      <!-- Email -->
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-control" formControlName="email" type="email" [ngClass]="(formLogin.controls['email'].errors && formLogin.controls['email'].touched) ? 'is-invalid' : ''">
+        <!-- Error validation email -->
+        <div class="validation" *ngIf="formLogin.controls['email'].hasError('email') && !formLogin.controls['email'].hasError('required') || formLogin.controls['email'].hasError('pattern')">
+          Por favor, introduce una dirección de correo electrónico válida.
+        </div>
+
+        <div class="validation" *ngIf="formLogin.controls['email'].hasError('required') && formLogin.controls['email'].touched">
+          <span>El email es <strong>requerido</strong>.</span>
+        </div>
+      </div>
+      <!-- Finish email -->
+
+      <!-- Password -->
+      <div class="form-group">
+        <label class="form-label">Contraseña</label>
+        <input class="form-control" formControlName="password" type="password" [ngClass]="(formLogin.controls['password'].errors && formLogin.controls['password'].touched) ? 'is-invalid' : ''">
+        <!-- Reset password -->
+        <div class="olvidar"><a routerLink="/reset-password">¿Olvidaste tu contraseña?</a></div>
+        <!-- Error validation password -->
+        <div class="validation" *ngIf="formLogin.controls['password'].errors && formLogin.controls['password'].touched">
+          <span>Se <strong>requiere</strong> una contraseña de al menos 6 caracteres.</span>
+        </div>
+      </div>
+      <!-- Finish password -->
+
+      <div class="boton d-grid gap-2">
+        <button type="submit" class="btn" [disabled]="!formLogin.valid">Iniciar sesión</button>
+      </div>
+    </form>
+    <div class="footer-text text-center">¿Eres nuevo usuario? <a routerLink="/sign-up">Regístrate</a></div>
+  </div>
+</div>
+
+
+
